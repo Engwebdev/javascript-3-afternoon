@@ -38,16 +38,18 @@ for(var key in values) {
 /*
   Inside the function showValues, write a for in loop that concatenates each of the property values and returns the concatenated string.
 */
-var string1 = "";
+
 
 function showValues(obj) {
-for (var prop in obj) {
-  string1 += obj[prop];
+  let string1 = "";
   
+for (let prop in obj) {
+  string1 += obj[prop];
+
   }
   return string1;
 }
-showValues(values);
+
 
 
 
@@ -62,20 +64,19 @@ showValues(values);
 */
 
 //Code Here
-var obj = {
+let obj = {
   one: 7,
   two: 9,
   three: 11
 }
-function greaterThan10(obj1) {
-    for ( let i in obj1 ) {
-      if ( obj1[i] > 10 ) {
-        obj1[i] = 0;
-        
+function greaterThan10(objGreater) {
+  
+    for ( let i in objGreater ) {
+      if ( objGreater[i] > 10 ) {
+        objGreater[i] = 0;
       }
-      
     }
-   return obj1
+   return objGreater
 }
 
 greaterThan10(obj)
@@ -89,13 +90,12 @@ greaterThan10(obj)
 */
 
 //Code Here
-function double(obj2) {
-    for ( let i in obj2 ) {
-      obj2[i] * 2
-    }
-    return obj2
+function double (obj){
+  for(var key in obj){
+    obj[key] = obj[key] * 2
+  }
+  return obj
 }
-
 
 ////////// PROBLEM 4 //////////
 
@@ -108,8 +108,15 @@ function double(obj2) {
 */
 
 //Code Here
-
-
+function secrets(obj) {
+  let str = "";
+  for ( let key in obj ) {
+    if ( key.startsWith("sh") ) {
+     str += obj[key]
+    }
+  }
+  return str;
+}
 
 /* 
   Sometimes it's needed to delete object properties. 
@@ -117,17 +124,17 @@ function double(obj2) {
   Uncomment the example below to see a for in loop deleting all the properties inside an object.
 */
 
-// var deleteAllThethings = {
-//   one: 1,
-//   two: 2,
-//   three: 3
-// }
+var deleteAllThethings = {
+  one: 1,
+  two: 2,
+  three: 3
+}
 
-// for(var key in deleteAllThethings) {
-//   delete deleteAllThethings[key]
-// }
+for(var key in deleteAllThethings) {
+  delete deleteAllThethings[key]
+}
 
-// console.log(deleteAllThethings)
+console.log(deleteAllThethings)
 
 
 
@@ -139,8 +146,14 @@ function double(obj2) {
 */
 
 //Code Here
-
-
+function removePassword(obj){
+  for(let key in obj){
+    if(key === "password"){
+      delete obj[key];
+    }
+  }
+  return obj;
+}
 
 ////////// PROBLEM 6 //////////
 
@@ -158,7 +171,11 @@ var deleteTheBigNumbers = {
 */
 
 //Code Here
-
+for ( let i in  deleteTheBigNumbers ) {
+  if( deleteTheBigNumbers[i] > 100 ) {
+    delete deleteTheBigNumbers[i] 
+  }
+}
 
 
 ////////// PROBLEM 7 //////////
@@ -171,7 +188,13 @@ var deleteTheBigNumbers = {
 */
 
 //Code Here
+function startsWithK(obj) {
+  for ( let i in obj ) {
+    if ( obj[i] ) {
 
+    }
+  }
+}
 
 
 ////////// PROBLEM 8 //////////
@@ -186,5 +209,4 @@ var deleteTheBigNumbers = {
 */
 
 //Code Here
-
 
